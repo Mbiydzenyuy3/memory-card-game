@@ -12,7 +12,7 @@ h1 {
 }
 
 .heading {
-  color: #fcfc04
+  color: #fcfc04;
 }
 
 /* button style */
@@ -48,6 +48,7 @@ button {
 .card {
   width: 100px;
   height: 100px;
+
   /* background-color: #007bff; */
   background-image: url("/assets /pattern_jigsaw.png");
   border-radius: 8px;

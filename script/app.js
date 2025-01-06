@@ -1,16 +1,15 @@
 // Card symbols (pairs)
 const cardSymbols = ['🍎', '🍌', '🍇', '🍓', '🍒', '🍍', '🥝', '🍑']
 const cards = [...cardSymbols, ...cardSymbols] // Duplicate for pairs
-
 // Shuffle the cards
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1)) // Generate a random index
-    // Swap elements at index i and j
-    [array[i], array[j]] = [array[j], array[i]]
+    const j = Math.floor(Math.random() * (i + 1)) // Define 'j' before use
+    [array[i], array[j]] = [array[j], array[i]] // Swap elements using destructuring
   }
   return array
 }
+
 
 const timerElement = document.getElementById('timer')
 const startButton = document.getElementById('start')
@@ -104,7 +103,7 @@ function flipCard (card) {
 // Check if the flipped cards match
 function checkForMatch () {
   attempts++
-  document.getElementById('attemptCount').textContent = attempts
+  document.getElementById('attempt-count').textContent = attempts
 
   const [card1, card2] = flippedCards
   if (card1.dataset.symbol === card2.dataset.symbol) {
