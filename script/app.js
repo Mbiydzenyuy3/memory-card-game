@@ -3,7 +3,7 @@ const cardSymbols = ['🍎', '🍌', '🍇', '🍓', '🍒', '🍍', '🥝', '�
 const cards = [...cardSymbols, ...cardSymbols] // Duplicate for pairs
 
 // Shuffle the cards
-function shuffle(array) {
+function shuffle (array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = (Math.floor(Math.random() * (i + 1))[(array[i], array[j])] = [
       array[j],
@@ -28,7 +28,7 @@ let seconds = 0
 let timer
 
 // Create game board
-function createGameBoard() {
+function createGameBoard () {
   const gameBoard = document.querySelector('.game-board')
   gameBoard.innerHTML = '' // Clear any existing cards
   shuffle(cards).forEach((symbol) => {
@@ -50,7 +50,7 @@ function createGameBoard() {
   })
 }
 
-function startGame() {
+function startGame () {
   createGameBoard()
   score = 0
   seconds = 0
@@ -60,7 +60,7 @@ function startGame() {
   startTimer()
 }
 
-function startTimer() {
+function startTimer () {
   clearInterval(timer)
   timer = setInterval(() => {
     seconds++
@@ -72,7 +72,7 @@ function startTimer() {
   }, 1000)
 }
 
-function endGame() {
+function endGame () {
   clearInterval(timer)
   gameStarted = false
   setTimeout(() => {
@@ -103,7 +103,7 @@ function flipCard(card) {
 }
 
 // Check if the flipped cards match
-function checkForMatch() {
+function checkForMatch () {
   attempts++
   document.getElementById('attemptCount').textContent = attempts
 
