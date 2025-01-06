@@ -49,7 +49,7 @@ button {
   width: 100px;
   height: 100px;
   /* background-color: #007bff; */
-  background-image: url("./assets/pattern_jigsaw.png");
+  background-image: url("/assets /pattern_jigsaw.png");
   border-radius: 8px;
   display: flex;
   justify-content: center;
