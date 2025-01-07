@@ -1,15 +1,15 @@
 // Card symbols (pairs)
 const cardSymbols = ['🍎', '🍌', '🍇', '🍓', '🍒', '🍍', '🥝', '🍑']
 const cards = [...cardSymbols, ...cardSymbols] // Duplicate for pairs
+
 // Shuffle the cards
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1)) // Define 'j' before use
-    [array[i], array[j]] = [array[j], array[i]] // Swap elements using destructuring
+      [array[i], array[j]] = [array[j], array[i]] // Swap elements using destructuring
   }
   return array
 }
-
 
 const timerElement = document.getElementById('timer')
 const startButton = document.getElementById('start')
@@ -26,7 +26,7 @@ let seconds = 0
 let timer
 
 // Create game board
-function createGameBoard () {
+function createGameBoard() {
   const gameBoard = document.querySelector('.game-board')
   gameBoard.innerHTML = '' // Clear any existing cards
   shuffle(cards).forEach((symbol) => {
@@ -48,17 +48,21 @@ function createGameBoard () {
   })
 }
 
-function startGame () {
+function startGame() {
   createGameBoard()
   score = 0
   seconds = 0
+  matchedPairs = 0
+  attempts = 0
+  flippedCards = []
   scoreElement.textContent = score
   timerElement.textContent = '00:00'
+  document.getElementById('attempt-count').textContent = attempts
   gameStarted = true
   startTimer()
 }
 
-function startTimer () {
+function startTimer() {
   clearInterval(timer)
   timer = setInterval(() => {
     seconds++
@@ -70,11 +74,11 @@ function startTimer () {
   }, 1000)
 }
 
-function endGame () {
+function endGame() {
   clearInterval(timer)
   gameStarted = false
   setTimeout(() => {
-    alert(`Congratulations! You won in ${attempts} attempts!`)
+    alert(`🎉 Congratulations!🎉  You won in ${attempts} attempts!`)
   }, 3000)
 }
 
@@ -82,7 +86,7 @@ startButton.addEventListener('click', startGame)
 restartButton.addEventListener('click', startGame)
 
 // Flip a card
-function flipCard (card) {
+function flipCard(card) {
   if (
     card.classList.contains('flipped') ||
     card.classList.contains('matched') ||
@@ -101,7 +105,7 @@ function flipCard (card) {
 }
 
 // Check if the flipped cards match
-function checkForMatch () {
+function checkForMatch() {
   attempts++
   document.getElementById('attempt-count').textContent = attempts
 
@@ -125,7 +129,7 @@ function checkForMatch () {
     }, 1000)
   }
 
-  flippedCards = [] // Reset flipped cards
+  flippedCards = [] 
 }
 
 // Initialize game
