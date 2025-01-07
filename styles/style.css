@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #1f1a1a;
+  background-color: #050404;
   margin: 0;
   padding: 20px;
   color: #fff;
@@ -35,6 +35,10 @@ button {
 #stats {
   padding-block: 1rem;
   text-align: center;
+}
+
+.game-main-features {
+  display: block;
 }
 
 .game-board {
@@ -79,5 +83,35 @@ button {
 @media (min-width: 768px) {
   body {
     background-image: linear-gradient(to right top, #34383a, #080806, #6b0896);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-image: linear-gradient(to right top, #080806, #6b0896);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .game-main-features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-board {
+    margin: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    background: #0a0909;
   }
 }
