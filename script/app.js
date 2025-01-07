@@ -5,8 +5,8 @@ const cards = [...cardSymbols, ...cardSymbols] // Duplicate for pairs
 // Shuffle the cards
 function shuffle (array) {
   for (let i = array.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1)) // Define 'j' before use
-    [array[i], array[j]] = [array[j], array[i]] // Swap elements using destructuring
+    const j = Math.floor(Math.random() * (i + 1))
+    array[i][j] = array[j][i]
   }
   return array
 }
@@ -14,7 +14,6 @@ function shuffle (array) {
 const timerElement = document.getElementById('timer')
 const startButton = document.getElementById('start')
 const restartButton = document.getElementById('restart')
-const scoreElement = document.getElementById('score')
 
 // Variables to track game state
 let flippedCards = []
@@ -124,6 +123,6 @@ function checkForMatch () {
       card2.querySelector('.card-content').style.visibility = 'hidden'
     }, 1000)
   }
-  flippedCards = [] 
+  flippedCards = []
 }
 createGameBoard()
