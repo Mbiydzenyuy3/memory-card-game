@@ -75,3 +75,9 @@ button {
   color: #000;
   cursor: default;
 }
+
+@media (min-width: 768px) {
+  body {
+    background-image: linear-gradient(to right top, #34383a, #080806, #6b0896);
+  }
+}
