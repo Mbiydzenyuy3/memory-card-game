@@ -48,7 +48,7 @@ button {
 .card {
   width: 100px;
   height: 100px;
-  background-image: url("assets /pattern_jigsaw.png");
+  background-image: url("/assets /pattern_jigsaw.png");
 
   /* background-color: #007bff; */
   border-radius: 8px;
