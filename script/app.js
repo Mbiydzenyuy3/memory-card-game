@@ -20,7 +20,6 @@ let flippedCards = []
 let matchedPairs = 0
 let attempts = 0
 let gameStarted = false
-let score = 0
 let seconds = 0
 let timer
 
@@ -48,12 +47,10 @@ function createGameBoard () {
 }
 function startGame () {
   createGameBoard()
-  score = 0
   seconds = 0
   matchedPairs = 0
   attempts = 0
   flippedCards = []
-  scoreElement.textContent = score
   timerElement.textContent = '00:00'
   document.getElementById('attempt-count').textContent = attempts
   gameStarted = true
