@@ -1,0 +1,117 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #050404;
+  margin: 0;
+  padding: 20px;
+  color: #fff;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.heading {
+  color: #fcfc04;
+}
+
+/* button style */
+button {
+  margin: 0 5px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid #fcfc04;
+  background-color: transparent;
+  color: #fff;
+}
+
+#timer {
+  color: #fcfc04;
+  font-weight: 700;
+}
+
+#stats {
+  padding-block: 1rem;
+  text-align: center;
+}
+
+.game-main-features {
+  display: block;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background-image: url("../assets /pattern_jigsaw.png");
+
+  /* background-color: #d8a601; */
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.card.flipped {
+  background: #fff;
+  color: #000;
+  transform: rotateY(180deg);
+  cursor: default;
+}
+
+.card.matched {
+  background-color: transparent;
+  color: #000;
+  cursor: default;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: linear-gradient(to right top, #34383a, #080806, #6b0896);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-image: linear-gradient(to right top, #080806, #6b0896);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .game-main-features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-board {
+    margin: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    background: #0a0909;
+  }
+}
